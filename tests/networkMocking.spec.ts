@@ -2,7 +2,7 @@ import {test} from'../fixtures/pageFixtures';
 import { mockedBooks } from '../test-data/books';
 
 
-test('TC_005: Mock Books API response and verify the booke being displayed', async({page, bookStorePage})=>{
+test('TC_005: Mock Books API response and verify the booke being displayed @smoke', async({page, bookStorePage})=>{
 
     await page.route(
         '**//BookStore/v1/Books',
@@ -26,7 +26,7 @@ test('TC_005: Mock Books API response and verify the booke being displayed', asy
     
 });
 
-test ('TC_006: Mock empty API response', async ({page,bookStorePage})=>{
+test ('TC_006: Mock empty API response @regression', async ({page,bookStorePage})=>{
     await page.route(
         '**/BookStore/v1/Books',
         async route=>{
@@ -44,7 +44,7 @@ test ('TC_006: Mock empty API response', async ({page,bookStorePage})=>{
     await bookStorePage.verifyNoBookDisplayed
 });
 
-test ('TC_007: Mock delayed API response', async({page, bookStorePage})=>{
+test ('TC_007: Mock delayed API response @regression', async({page, bookStorePage})=>{
     await page.route(
         '**/BookStore/v1/Books',
         async route=>{
