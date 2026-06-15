@@ -43,7 +43,11 @@ test ('TC_006: Mock empty API response @regression', async ({page,bookStorePage}
         } 
     );
     await bookStorePage.goto()
+<<<<<<< HEAD
     await bookStorePage.verifyNoBookDisplayed();
+=======
+    await bookStorePage.verifyNoBookDisplayed()
+>>>>>>> 1b7b6793e20bc8f1903f153bfcbcd3919e70c16e
 });
 
 test ('TC_007: Mock delayed API response @regression', async({page, bookStorePage})=>{
