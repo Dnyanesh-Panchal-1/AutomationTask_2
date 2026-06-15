@@ -25,7 +25,7 @@ export class BookStorePage{
     }
 
     async verifyNoBookDisplayed():Promise<void>{
-        await expect(this.page.getByText(messages.noBooksFound)).toBeVisible();
+        await expect(this.bookRows).toHaveCount(0);
     }
 
     async verifyBookLoaded(bookTitle:string): Promise<void>{
