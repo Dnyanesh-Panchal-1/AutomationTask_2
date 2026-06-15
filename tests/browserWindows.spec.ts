@@ -17,7 +17,7 @@ test ('TC_002: Verify content of newly opened tab @regression', async ({page,bro
         browserWindowsPage.openNewTab()
     ]);
     await childPage.waitForLoadState();
-    await browserWindowsPage.verifySamplePageContent();
+    await browserWindowsPage.verifySamplePageContent(page);
 });
 
 test ('TC_003: Close child tab and switch back to parent @regression', async ({page,browserWindowsPage})=>{
